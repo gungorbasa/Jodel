@@ -6,25 +6,39 @@
 //  Copyright © 2021 Jodel. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 
 final class PhotoFeedViewController: UIViewController {
 
-    var presenter: PhotoFeedPresenterProtocol!
+  var presenter: PhotoFeedPresenterProtocol?
+  private let collectionView = UICollectionView()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setup()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setup()
+  }
+}
+
+private extension PhotoFeedViewController {
+  func setup() {
+    view.backgroundColor = .white
+    setupCollectionView()
+  }
+
+  func setupCollectionView() {
+    view.addSubview(collectionView)
+    collectionView.backgroundColor = .white
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    collectionView.snp.makeConstraints {
+      $0.edges.equalTo(view.layoutMarginsGuide)
     }
-
-    private func setup() {
-
-    }
+  }
 }
 
 extension PhotoFeedViewController: PhotoFeedViewProtocol {
 
-    func handleOutput(_ output: PhotoFeedPresenterOutput) {
+  func handleOutput(_ output: PhotoFeedPresenterOutput) {
 
-    }
+  }
 }

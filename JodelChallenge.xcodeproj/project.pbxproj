@@ -17,6 +17,7 @@
 		23D4FB1926571E2E000070AE /* PhotoFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1226571E2E000070AE /* PhotoFeedViewController.swift */; };
 		23D4FB1A26571E2E000070AE /* PhotoFeedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1326571E2E000070AE /* PhotoFeedBuilder.swift */; };
 		23D4FB1B26571E2E000070AE /* PhotoFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1426571E2E000070AE /* PhotoFeedInteractor.swift */; };
+		23D4FB1E26571FED000070AE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 23D4FB1D26571FED000070AE /* SnapKit */; };
 		3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F89F9CE1F73AFFC002A3FCB /* FlickrApi.m */; };
 		3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7441F73AE9200D35147 /* AppDelegate.swift */; };
 		3FBCC74A1F73AE9200D35147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC7481F73AE9200D35147 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D4FB1E26571FED000070AE /* SnapKit in Frameworks */,
 				E3F2831F9F2C8EF141DFDAF9 /* libPods-JodelChallenge.a in Frameworks */,
 				23D4FB0926571BDC000070AE /* Nuke in Frameworks */,
 			);
@@ -204,6 +206,7 @@
 			name = JodelChallenge;
 			packageProductDependencies = (
 				23D4FB0826571BDC000070AE /* Nuke */,
+				23D4FB1D26571FED000070AE /* SnapKit */,
 			);
 			productName = JodelChallenge;
 			productReference = 3FBCC7411F73AE9200D35147 /* JodelChallenge.app */;
@@ -261,6 +264,7 @@
 			mainGroup = 3FBCC7381F73AE9200D35147;
 			packageReferences = (
 				23D4FB0726571BDC000070AE /* XCRemoteSwiftPackageReference "Nuke" */,
+				23D4FB1C26571FED000070AE /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3FBCC7421F73AE9200D35147 /* Products */;
 			projectDirPath = "";
@@ -608,6 +612,14 @@
 				minimumVersion = 9.6.0;
 			};
 		};
+		23D4FB1C26571FED000070AE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -615,6 +627,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 23D4FB0726571BDC000070AE /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		23D4FB1D26571FED000070AE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23D4FB1C26571FED000070AE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
