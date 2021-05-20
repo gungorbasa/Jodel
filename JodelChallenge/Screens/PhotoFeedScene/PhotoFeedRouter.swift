@@ -10,13 +10,24 @@ import UIKit
 
 final class PhotoFeedRouter: PhotoFeedRouterProtocol {
 
-    unowned let view: UIViewController
+  weak var view: UIViewController?
 
-    init(_ view: UIViewController) {
-        self.view = view
+  init(_ view: UIViewController) {
+    self.view = view
+  }
+
+  func navigate(to route: PhotoFeedRoute) {
+    switch route {
+    case .alert(let message):
+      present(message: message)
     }
+  }
+}
 
-    func navigate(to route: PhotoFeedRoute) {
-
-    }
+private extension PhotoFeedRouter {
+  func present(message: String) {
+    let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    view?.present(alert, animated: true)
+  }
 }

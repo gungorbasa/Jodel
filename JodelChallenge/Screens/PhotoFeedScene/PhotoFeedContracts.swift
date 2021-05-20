@@ -43,7 +43,7 @@ protocol PhotoFeedViewProtocol: AnyObject {
 
 // MARK: - Router
 enum PhotoFeedRoute: Equatable {
-
+  case alert(message: String)
 }
 
 protocol PhotoFeedRouterProtocol: AnyObject {

@@ -119,6 +119,7 @@
 		23D4FB0D26571E1C000070AE /* PhotoFeedScene */ = {
 			isa = PBXGroup;
 			children = (
+				23D4FB24265723A3000070AE /* Factories */,
 				23D4FB1F2657212F000070AE /* Cell */,
 				23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */,
 				23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */,
@@ -137,6 +138,13 @@
 				23D4FB2226572169000070AE /* PhotoFeedCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		23D4FB24265723A3000070AE /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		3F89F9C91F73AF8A002A3FCB /* NetworkAPI */ = {

@@ -10,7 +10,7 @@ import Foundation
 
 final class PhotoFeedPresenter: PhotoFeedPresenterProtocol {
   
-  private unowned let view: PhotoFeedViewProtocol
+  private weak var view: PhotoFeedViewProtocol?
   
   private let interactor: PhotoFeedInteractorProtocol
   private let router: PhotoFeedRouterProtocol
@@ -26,6 +26,13 @@ final class PhotoFeedPresenter: PhotoFeedPresenterProtocol {
 extension PhotoFeedPresenter: PhotoFeedInteractorDelegate {
   
   func handleOutput(_ output: PhotoFeedInteractorOutput) {
-    
+    DispatchQueue.main.async {
+      switch output {
+      case .urls(let urls):
+        print(urls)
+      case .error:
+        self.router.navigate(to: .alert(message: "Something went wrong. Please, try again!"))
+      }
+    }
   }
 }
