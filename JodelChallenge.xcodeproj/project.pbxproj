@@ -10,7 +10,13 @@
 		0A0367FB22C4E2BE0041C31E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */; };
 		0A0367FD22C4E5DC0041C31E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0367FC22C4E5DC0041C31E /* FeedCell.swift */; };
 		23D4FB0926571BDC000070AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 23D4FB0826571BDC000070AE /* Nuke */; };
-		23D4FB0C26571D10000070AE /* PhotoListSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B26571D10000070AE /* PhotoListSevice.swift */; };
+		23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */; };
+		23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */; };
+		23D4FB1726571E2E000070AE /* PhotoFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */; };
+		23D4FB1826571E2E000070AE /* PhotoFeedContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1126571E2E000070AE /* PhotoFeedContracts.swift */; };
+		23D4FB1926571E2E000070AE /* PhotoFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1226571E2E000070AE /* PhotoFeedViewController.swift */; };
+		23D4FB1A26571E2E000070AE /* PhotoFeedBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1326571E2E000070AE /* PhotoFeedBuilder.swift */; };
+		23D4FB1B26571E2E000070AE /* PhotoFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB1426571E2E000070AE /* PhotoFeedInteractor.swift */; };
 		3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F89F9CE1F73AFFC002A3FCB /* FlickrApi.m */; };
 		3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7441F73AE9200D35147 /* AppDelegate.swift */; };
 		3FBCC74A1F73AE9200D35147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC7481F73AE9200D35147 /* Main.storyboard */; };
@@ -33,7 +39,13 @@
 /* Begin PBXFileReference section */
 		0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		0A0367FC22C4E5DC0041C31E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
-		23D4FB0B26571D10000070AE /* PhotoListSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListSevice.swift; sourceTree = "<group>"; };
+		23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedSevice.swift; sourceTree = "<group>"; };
+		23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedPresenter.swift; sourceTree = "<group>"; };
+		23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedRouter.swift; sourceTree = "<group>"; };
+		23D4FB1126571E2E000070AE /* PhotoFeedContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedContracts.swift; sourceTree = "<group>"; };
+		23D4FB1226571E2E000070AE /* PhotoFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedViewController.swift; sourceTree = "<group>"; };
+		23D4FB1326571E2E000070AE /* PhotoFeedBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedBuilder.swift; sourceTree = "<group>"; };
+		23D4FB1426571E2E000070AE /* PhotoFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedInteractor.swift; sourceTree = "<group>"; };
 		310774A51D73A513D7854CD7 /* libPods-JodelChallenge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JodelChallenge.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F89F9CC1F73AFFC002A3FCB /* JodelChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JodelChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F89F9CD1F73AFFC002A3FCB /* FlickrApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrApi.h; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 		0A3FEA1122C4DF2C0007A257 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				23D4FB0D26571E1C000070AE /* PhotoFeedScene */,
 				0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */,
 				0A0367FC22C4E5DC0041C31E /* FeedCell.swift */,
 			);
@@ -92,9 +105,22 @@
 		23D4FB0A26571CF5000070AE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				23D4FB0B26571D10000070AE /* PhotoListSevice.swift */,
+				23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		23D4FB0D26571E1C000070AE /* PhotoFeedScene */ = {
+			isa = PBXGroup;
+			children = (
+				23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */,
+				23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */,
+				23D4FB1126571E2E000070AE /* PhotoFeedContracts.swift */,
+				23D4FB1226571E2E000070AE /* PhotoFeedViewController.swift */,
+				23D4FB1326571E2E000070AE /* PhotoFeedBuilder.swift */,
+				23D4FB1426571E2E000070AE /* PhotoFeedInteractor.swift */,
+			);
+			path = PhotoFeedScene;
 			sourceTree = "<group>";
 		};
 		3F89F9C91F73AF8A002A3FCB /* NetworkAPI */ = {
@@ -294,9 +320,15 @@
 			files = (
 				0A0367FB22C4E2BE0041C31E /* FeedViewController.swift in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
+				23D4FB1A26571E2E000070AE /* PhotoFeedBuilder.swift in Sources */,
+				23D4FB1826571E2E000070AE /* PhotoFeedContracts.swift in Sources */,
+				23D4FB1726571E2E000070AE /* PhotoFeedRouter.swift in Sources */,
+				23D4FB1B26571E2E000070AE /* PhotoFeedInteractor.swift in Sources */,
 				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
+				23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */,
 				0A0367FD22C4E5DC0041C31E /* FeedCell.swift in Sources */,
-				23D4FB0C26571D10000070AE /* PhotoListSevice.swift in Sources */,
+				23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */,
+				23D4FB1926571E2E000070AE /* PhotoFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

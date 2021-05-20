@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol PhotoListServing {
+protocol PhotoFeedServing {
   func fetch(completion: @escaping (Result<[URL], Error>) -> Void)
 }
 
-final class PhotoListService: PhotoListServing {
+final class PhotoFeedService: PhotoFeedServing {
   func fetch(completion: @escaping (Result<[URL], Error>) -> Void) {
     FlickrApi.fetchPhotos { urls, error in
       if let error = error {
