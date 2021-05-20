@@ -14,12 +14,8 @@ final class PhotoFeedBuilder {
     let view = PhotoFeedViewController()
     // TODO: Injections
     let router = PhotoFeedRouter(view)
-    //        let networkWorker = NetworkWorker(app.networking)
-    //        let service = RestaurantListService(networkWorker, database: DbWorker(Database()))
-    //        //        MovieListInteractor(app.service)
     let service = PhotoFeedService()
     let interactor = PhotoFeedInteractor(service: service)
-    //        let interactor = PhotoFeedInteractor(service)
     let presenter = PhotoFeedPresenter(view, interactor: interactor, router: router)
     view.presenter = presenter
     return view
