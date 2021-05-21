@@ -13,12 +13,19 @@ protocol PhotoFeedServing {
 }
 
 final class PhotoFeedService: PhotoFeedServing {
+  private let flickrApi: FlickrAPI
+
+  init(api: FlickrAPI = Flickr()) {
+    self.flickrApi = api
+  }
+
   func fetch(completion: @escaping (Result<[URL], Error>) -> Void) {
-    FlickrApi.fetchPhotos { urls, error in
-      if let error = error {
-        completion(.failure(error))
-      } else {
-        completion(.success(urls ?? []))
+    flickrApi.fetchInterestingnessList { result in
+      switch result {
+      case .success(let photos):
+        print(photos)
+      case .failure(let error):
+        print(error)
       }
     }
   }
