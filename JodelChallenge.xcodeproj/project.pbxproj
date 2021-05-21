@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0367FB22C4E2BE0041C31E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */; };
-		0A0367FD22C4E5DC0041C31E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0367FC22C4E5DC0041C31E /* FeedCell.swift */; };
 		237BAC3B26572EC200AB08E2 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3A26572EC200AB08E2 /* Flickr.swift */; };
 		237BAC3E2657A1AB00AB08E2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3D2657A1AB00AB08E2 /* Photo.swift */; };
 		237BAC40265856C500AB08E2 /* RootViewStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3F265856C500AB08E2 /* RootViewStartupProcess.swift */; };
@@ -43,8 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		0A0367FC22C4E5DC0041C31E /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		237BAC3A26572EC200AB08E2 /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		237BAC3D2657A1AB00AB08E2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		237BAC3F265856C500AB08E2 /* RootViewStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStartupProcess.swift; sourceTree = "<group>"; };
@@ -98,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				23D4FB0D26571E1C000070AE /* PhotoFeedScene */,
-				0A0367FA22C4E2BE0041C31E /* FeedViewController.swift */,
-				0A0367FC22C4E5DC0041C31E /* FeedCell.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -386,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23D4FB2126572148000070AE /* PhotoFeedCell.swift in Sources */,
-				0A0367FB22C4E2BE0041C31E /* FeedViewController.swift in Sources */,
 				237BAC40265856C500AB08E2 /* RootViewStartupProcess.swift in Sources */,
 				237BAC3B26572EC200AB08E2 /* Flickr.swift in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
@@ -399,7 +392,6 @@
 				23D4FB2A26572754000070AE /* StartupProcess.swift in Sources */,
 				23D4FB2326572169000070AE /* PhotoFeedCellViewModel.swift in Sources */,
 				23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */,
-				0A0367FD22C4E5DC0041C31E /* FeedCell.swift in Sources */,
 				23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */,
 				23D4FB1926571E2E000070AE /* PhotoFeedViewController.swift in Sources */,
 			);
