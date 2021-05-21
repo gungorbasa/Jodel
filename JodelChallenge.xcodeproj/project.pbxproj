@@ -24,7 +24,6 @@
 		23D4FB2326572169000070AE /* PhotoFeedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB2226572169000070AE /* PhotoFeedCellViewModel.swift */; };
 		23D4FB2A26572754000070AE /* StartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB2926572754000070AE /* StartupProcess.swift */; };
 		23D4FB2C2657277E000070AE /* FlickrStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB2B2657277E000070AE /* FlickrStartupProcess.swift */; };
-		3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F89F9CE1F73AFFC002A3FCB /* FlickrApi.m */; };
 		3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBCC7441F73AE9200D35147 /* AppDelegate.swift */; };
 		3FBCC74A1F73AE9200D35147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC7481F73AE9200D35147 /* Main.storyboard */; };
 		3FBCC74C1F73AE9200D35147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBCC74B1F73AE9200D35147 /* Assets.xcassets */; };
@@ -60,8 +59,6 @@
 		23D4FB2926572754000070AE /* StartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupProcess.swift; sourceTree = "<group>"; };
 		23D4FB2B2657277E000070AE /* FlickrStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrStartupProcess.swift; sourceTree = "<group>"; };
 		3F89F9CC1F73AFFC002A3FCB /* JodelChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JodelChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
-		3F89F9CD1F73AFFC002A3FCB /* FlickrApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrApi.h; sourceTree = "<group>"; };
-		3F89F9CE1F73AFFC002A3FCB /* FlickrApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrApi.m; sourceTree = "<group>"; };
 		3FBCC7411F73AE9200D35147 /* JodelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JodelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBCC7441F73AE9200D35147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBCC7491F73AE9200D35147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 			children = (
 				237BAC3C2657A19F00AB08E2 /* Models */,
 				23D4FB0A26571CF5000070AE /* Services */,
-				3F89F9CD1F73AFFC002A3FCB /* FlickrApi.h */,
-				3F89F9CE1F73AFFC002A3FCB /* FlickrApi.m */,
 				237BAC3A26572EC200AB08E2 /* Flickr.swift */,
 			);
 			path = NetworkAPI;
@@ -400,7 +395,6 @@
 				23D4FB1726571E2E000070AE /* PhotoFeedRouter.swift in Sources */,
 				23D4FB1B26571E2E000070AE /* PhotoFeedInteractor.swift in Sources */,
 				23D4FB2C2657277E000070AE /* FlickrStartupProcess.swift in Sources */,
-				3F5224401F73B0C100D7D77A /* FlickrApi.m in Sources */,
 				237BAC3E2657A1AB00AB08E2 /* Photo.swift in Sources */,
 				23D4FB2A26572754000070AE /* StartupProcess.swift in Sources */,
 				23D4FB2326572169000070AE /* PhotoFeedCellViewModel.swift in Sources */,
