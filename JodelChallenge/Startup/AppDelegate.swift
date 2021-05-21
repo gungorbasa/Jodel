@@ -13,8 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-  private let startupProcesses: [StartupProcess] = [
-    FlickrStartupProcess()
+  private lazy var startupProcesses: [StartupProcess] = [
+    FlickrStartupProcess(),
+    RootViewStartupProcess(window: window)
   ]
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

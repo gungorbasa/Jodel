@@ -12,7 +12,7 @@ import UIKit
 final class PhotoFeedViewController: UIViewController {
 
   var presenter: PhotoFeedPresenterProtocol?
-  private let collectionView = UICollectionView()
+  private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
   override func viewDidLoad() {
     super.viewDidLoad()
