@@ -10,6 +10,8 @@
 		237BAC3B26572EC200AB08E2 /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3A26572EC200AB08E2 /* Flickr.swift */; };
 		237BAC3E2657A1AB00AB08E2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3D2657A1AB00AB08E2 /* Photo.swift */; };
 		237BAC40265856C500AB08E2 /* RootViewStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC3F265856C500AB08E2 /* RootViewStartupProcess.swift */; };
+		237BAC4426585A1A00AB08E2 /* UICollectionView+Jodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC4326585A1A00AB08E2 /* UICollectionView+Jodel.swift */; };
+		237BAC4626585A7C00AB08E2 /* UICollectionReusableView+Jodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC4526585A7C00AB08E2 /* UICollectionReusableView+Jodel.swift */; };
 		23D4FB0926571BDC000070AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 23D4FB0826571BDC000070AE /* Nuke */; };
 		23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */; };
 		23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */; };
@@ -44,6 +46,8 @@
 		237BAC3A26572EC200AB08E2 /* Flickr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
 		237BAC3D2657A1AB00AB08E2 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		237BAC3F265856C500AB08E2 /* RootViewStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStartupProcess.swift; sourceTree = "<group>"; };
+		237BAC4326585A1A00AB08E2 /* UICollectionView+Jodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Jodel.swift"; sourceTree = "<group>"; };
+		237BAC4526585A7C00AB08E2 /* UICollectionReusableView+Jodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionReusableView+Jodel.swift"; sourceTree = "<group>"; };
 		23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedSevice.swift; sourceTree = "<group>"; };
 		23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedPresenter.swift; sourceTree = "<group>"; };
 		23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +117,23 @@
 				237BAC3D2657A1AB00AB08E2 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		237BAC41265859FF00AB08E2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				237BAC4226585A0700AB08E2 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		237BAC4226585A0700AB08E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				237BAC4326585A1A00AB08E2 /* UICollectionView+Jodel.swift */,
+				237BAC4526585A7C00AB08E2 /* UICollectionReusableView+Jodel.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		23D4FB0A26571CF5000070AE /* Services */ = {
@@ -198,6 +219,7 @@
 		3FBCC7431F73AE9200D35147 /* JodelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				237BAC41265859FF00AB08E2 /* Utils */,
 				23D4FB28265726D8000070AE /* Startup */,
 				0A3FEA1122C4DF2C0007A257 /* Screens */,
 				3F89F9C91F73AF8A002A3FCB /* NetworkAPI */,
@@ -384,10 +406,12 @@
 				237BAC3B26572EC200AB08E2 /* Flickr.swift in Sources */,
 				3FBCC7451F73AE9200D35147 /* AppDelegate.swift in Sources */,
 				23D4FB1A26571E2E000070AE /* PhotoFeedBuilder.swift in Sources */,
+				237BAC4426585A1A00AB08E2 /* UICollectionView+Jodel.swift in Sources */,
 				23D4FB1826571E2E000070AE /* PhotoFeedContracts.swift in Sources */,
 				23D4FB1726571E2E000070AE /* PhotoFeedRouter.swift in Sources */,
 				23D4FB1B26571E2E000070AE /* PhotoFeedInteractor.swift in Sources */,
 				23D4FB2C2657277E000070AE /* FlickrStartupProcess.swift in Sources */,
+				237BAC4626585A7C00AB08E2 /* UICollectionReusableView+Jodel.swift in Sources */,
 				237BAC3E2657A1AB00AB08E2 /* Photo.swift in Sources */,
 				23D4FB2A26572754000070AE /* StartupProcess.swift in Sources */,
 				23D4FB2326572169000070AE /* PhotoFeedCellViewModel.swift in Sources */,
