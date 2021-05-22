@@ -14,11 +14,13 @@ protocol PhotoFeedInteractorProtocol: AnyObject {
   var delegate: PhotoFeedInteractorDelegate? { get set }
 
   func fetchImageURLS()
+  func fetchMoreImageURLS()
 }
 
 enum PhotoFeedInteractorOutput {
   case error(Error)
   case photos([Photo])
+  case morePhotos([Photo])
 }
 
 protocol PhotoFeedInteractorDelegate: AnyObject {
@@ -30,6 +32,7 @@ protocol PhotoFeedInteractorDelegate: AnyObject {
 protocol PhotoFeedPresenterProtocol: AnyObject {
   func onViewDidLoad()
   func onRefreshData()
+  func willDisplayCell(at index: Int)
   func itemSelected(at index: Int)
   func numberOfItems() -> Int
   func viewModelForIndex(index: Int) -> PhotoFeedCellViewModel?
@@ -37,6 +40,7 @@ protocol PhotoFeedPresenterProtocol: AnyObject {
 
 enum PhotoFeedPresenterOutput: Equatable {
   case reload
+  case insertItems(at: [IndexPath])
   case startRefreshing
   case endRefreshing
 }

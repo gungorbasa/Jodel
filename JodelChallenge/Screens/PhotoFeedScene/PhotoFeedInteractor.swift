@@ -28,4 +28,15 @@ final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
       }
     }
   }
+
+  func fetchMoreImageURLS() {
+    service.fetchMore { [weak self] result in
+      switch result {
+      case .success(let photos):
+        self?.delegate?.handleOutput(.morePhotos(photos))
+      case .failure(let error):
+        self?.delegate?.handleOutput(.error(error))
+      }
+    }
+  }
 }

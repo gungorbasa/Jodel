@@ -33,6 +33,12 @@ final class PhotoFeedPresenter: PhotoFeedPresenterProtocol {
     view?.handleOutput(.startRefreshing)
   }
 
+  func willDisplayCell(at index: Int) {
+    if index == dataSource.count - 2 {
+      interactor.fetchMoreImageURLS()
+    }
+  }
+
   func itemSelected(at index: Int) {
     guard dataSource.count > index, let url = dataSource[index].url else {
       return
@@ -61,6 +67,16 @@ extension PhotoFeedPresenter: PhotoFeedInteractorDelegate {
       DispatchQueue.main.async {
         self.dataSource = viewModels
         self.view?.handleOutput(.reload)
+        self.view?.handleOutput(.endRefreshing)
+      }
+    case .morePhotos(let photos):
+      let viewModels = photos.map { PhotoFeedCellViewModel(url: $0.url, title: $0.title) }
+      DispatchQueue.main.async {
+        let beforeSize = self.dataSource.count
+        self.dataSource.append(contentsOf: viewModels)
+        let afterSize = self.dataSource.count
+        let indexPaths = (beforeSize ..< afterSize).map { IndexPath(item: $0, section: 0) }
+        self.view?.handleOutput(.insertItems(at: indexPaths))
         self.view?.handleOutput(.endRefreshing)
       }
     case .error:

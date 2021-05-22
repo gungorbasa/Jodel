@@ -50,7 +50,7 @@ private extension PhotoFeedViewController {
 
   func setupRefreshControl() {
     let refreshControl = UIRefreshControl()
-    collectionView.refreshControl?.addTarget(self, action: #selector(onPullRefresh), for: .valueChanged)
+    refreshControl.addTarget(self, action: #selector(onPullRefresh), for: .valueChanged)
     collectionView.refreshControl = refreshControl
     collectionView.alwaysBounceVertical = true
   }
@@ -79,6 +79,14 @@ extension PhotoFeedViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     presenter?.itemSelected(at: indexPath.row)
   }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    willDisplay cell: UICollectionViewCell,
+    forItemAt indexPath: IndexPath
+  ) {
+    presenter?.willDisplayCell(at: indexPath.row)
+  }
 }
 
 extension PhotoFeedViewController: UICollectionViewDelegateFlowLayout {
@@ -101,6 +109,8 @@ extension PhotoFeedViewController: PhotoFeedViewProtocol {
     switch output {
     case .reload:
       collectionView.reloadData()
+    case .insertItems(let indexPaths):
+      collectionView.insertItems(at: indexPaths)
     case .startRefreshing:
       collectionView.refreshControl?.beginRefreshing()
     case .endRefreshing:
