@@ -20,6 +20,7 @@ final class PinchToZoomImageViewViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    presenter?.onViewDidLoad()
   }
 }
 
@@ -42,10 +43,10 @@ private extension PinchToZoomImageViewViewController {
   func setupImageView() {
     scrollView.addSubview(imageView)
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.contentMode = .center
+    imageView.contentMode = .scaleAspectFit
     imageView.snp.makeConstraints {
-      $0.leading.trailing.equalToSuperview()
-      $0.centerY.equalToSuperview()
+      $0.centerY.centerX.equalToSuperview()
+      $0.width.height.equalToSuperview()
     }
   }
 
@@ -81,6 +82,8 @@ extension PinchToZoomImageViewViewController: PinchToZoomImageViewViewProtocol {
     switch output {
     case .loadImage(let url):
       Nuke.loadImage(with: url, into: imageView)
+    case .setImage(let name):
+      imageView.image = UIImage(named: name)
     }
   }
 }

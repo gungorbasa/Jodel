@@ -23,7 +23,7 @@ final class PinchToZoomImageViewPresenter: PinchToZoomImageViewPresenterProtocol
   }
 
   func onViewDidLoad() {
-    
+    interactor.setImage()
   }
 
   func onTapClose() {
@@ -34,6 +34,15 @@ final class PinchToZoomImageViewPresenter: PinchToZoomImageViewPresenterProtocol
 extension PinchToZoomImageViewPresenter: PinchToZoomImageViewInteractorDelegate {
 
   func handleOutput(_ output: PinchToZoomImageViewInteractorOutput) {
-
+    switch output {
+    case .imageURL(let url):
+      DispatchQueue.main.async {
+        self.view.handleOutput(.loadImage(url: url))
+      }
+    case .imageName(let name):
+      DispatchQueue.main.async {
+        self.view.handleOutput(.setImage(name: name))
+      }
+    }
   }
 }

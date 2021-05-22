@@ -10,11 +10,11 @@ import UIKit
 
 final class PinchToZoomImageViewBuilder {
   
-  static func make() -> PinchToZoomImageViewViewController {
+  static func make(with url: URL) -> PinchToZoomImageViewViewController {
     let view = PinchToZoomImageViewViewController()
     // TODO: Injections
     let router = PinchToZoomImageViewRouter(view)
-    let interactor = PinchToZoomImageViewInteractor()
+    let interactor = PinchToZoomImageViewInteractor(with: url)
     let presenter = PinchToZoomImageViewPresenter(view, interactor: interactor, router: router)
     view.presenter = presenter
     return view

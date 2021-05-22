@@ -9,14 +9,13 @@
 import UIKit
 
 final class PinchToZoomImageViewRouter: PinchToZoomImageViewRouterProtocol {
-
-    unowned let view: UIViewController
+    weak var view: UIViewController?
 
     init(_ view: UIViewController) {
         self.view = view
     }
 
     func navigate(to route: PinchToZoomImageViewRoute) {
-      view.dismiss(animated: true, completion: nil)
+      view?.dismiss(animated: true, completion: nil)
     }
 }

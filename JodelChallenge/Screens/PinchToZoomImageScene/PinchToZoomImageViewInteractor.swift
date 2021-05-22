@@ -10,6 +10,15 @@ import Foundation
 
 final class PinchToZoomImageViewInteractor: PinchToZoomImageViewInteractorProtocol {
 
-    weak var delegate: PinchToZoomImageViewInteractorDelegate?
+  weak var delegate: PinchToZoomImageViewInteractorDelegate?
+  private let url: URL
 
+  init(with url: URL) {
+    self.url = url
+  }
+
+  func setImage() {
+    delegate?.handleOutput(.imageURL(url))
+  }
 }
+
