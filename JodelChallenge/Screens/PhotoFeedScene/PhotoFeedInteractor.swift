@@ -14,7 +14,7 @@ final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
 
   private let service: PhotoFeedServing
 
-  init(service: PhotoFeedService) {
+  init(service: PhotoFeedServing) {
     self.service = service
   }
 
