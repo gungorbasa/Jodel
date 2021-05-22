@@ -29,6 +29,7 @@ protocol PhotoFeedInteractorDelegate: AnyObject {
 // MARK: - Presenter
 protocol PhotoFeedPresenterProtocol: AnyObject {
   func onViewDidLoad()
+  func itemSelected(at index: Int)
   func numberOfItems() -> Int
   func viewModelForIndex(index: Int) -> PhotoFeedCellViewModel?
 }

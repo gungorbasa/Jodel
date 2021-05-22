@@ -62,6 +62,12 @@ extension PhotoFeedViewController: UICollectionViewDataSource {
   }
 }
 
+extension PhotoFeedViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    presenter?.itemSelected(at: indexPath.row)
+  }
+}
+
 extension PhotoFeedViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(
     _ collectionView: UICollectionView,

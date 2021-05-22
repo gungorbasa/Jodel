@@ -27,6 +27,16 @@ final class PhotoFeedPresenter: PhotoFeedPresenterProtocol {
     interactor.fetchImageURLS()
   }
 
+  func itemSelected(at index: Int) {
+    // TODO: Implement routing to full size image viewer
+    print("Selected Index: \(index)")
+    guard dataSource.count > index else {
+      return
+    }
+    let viewModel = dataSource[index]
+    print(viewModel)
+  }
+
   func numberOfItems() -> Int {
     dataSource.count
   }
