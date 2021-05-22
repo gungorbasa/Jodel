@@ -25,16 +25,19 @@ final class PhotoFeedPresenter: PhotoFeedPresenterProtocol {
 
   func onViewDidLoad() {
     interactor.fetchImageURLS()
+    view?.handleOutput(.startRefreshing)
+  }
+
+  func onRefreshData() {
+    interactor.fetchImageURLS()
+    view?.handleOutput(.startRefreshing)
   }
 
   func itemSelected(at index: Int) {
-    // TODO: Implement routing to full size image viewer
-    print("Selected Index: \(index)")
-    guard dataSource.count > index else {
+    guard dataSource.count > index, let url = dataSource[index].url else {
       return
     }
-    let viewModel = dataSource[index]
-    print(viewModel)
+    router.navigate(to: .pinchToZoomImageView(url: url))
   }
 
   func numberOfItems() -> Int {
@@ -58,9 +61,11 @@ extension PhotoFeedPresenter: PhotoFeedInteractorDelegate {
       DispatchQueue.main.async {
         self.dataSource = viewModels
         self.view?.handleOutput(.reload)
+        self.view?.handleOutput(.endRefreshing)
       }
     case .error:
       DispatchQueue.main.async {
+        self.view?.handleOutput(.endRefreshing)
         self.router.navigate(to: .alert(message: "Something went wrong. Please, try again!"))
       }
     }

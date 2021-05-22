@@ -29,6 +29,7 @@ protocol PhotoFeedInteractorDelegate: AnyObject {
 // MARK: - Presenter
 protocol PhotoFeedPresenterProtocol: AnyObject {
   func onViewDidLoad()
+  func onRefreshData()
   func itemSelected(at index: Int)
   func numberOfItems() -> Int
   func viewModelForIndex(index: Int) -> PhotoFeedCellViewModel?
@@ -36,6 +37,8 @@ protocol PhotoFeedPresenterProtocol: AnyObject {
 
 enum PhotoFeedPresenterOutput: Equatable {
   case reload
+  case startRefreshing
+  case endRefreshing
 }
 
 // MARK: - View
@@ -47,6 +50,7 @@ protocol PhotoFeedViewProtocol: AnyObject {
 // MARK: - Router
 enum PhotoFeedRoute: Equatable {
   case alert(message: String)
+  case pinchToZoomImageView(url: URL)
 }
 
 protocol PhotoFeedRouterProtocol: AnyObject {

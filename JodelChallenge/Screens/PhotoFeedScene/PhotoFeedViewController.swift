@@ -26,6 +26,7 @@ private extension PhotoFeedViewController {
   func setup() {
     view.backgroundColor = .groupTableViewBackground
     setupCollectionView()
+    setupRefreshControl()
   }
 
   func setupCollectionView() {
@@ -45,6 +46,18 @@ private extension PhotoFeedViewController {
     collectionView.snp.makeConstraints {
       $0.edges.equalTo(view.layoutMarginsGuide)
     }
+  }
+
+  func setupRefreshControl() {
+    let refreshControl = UIRefreshControl()
+    collectionView.refreshControl?.addTarget(self, action: #selector(onPullRefresh), for: .valueChanged)
+    collectionView.refreshControl = refreshControl
+    collectionView.alwaysBounceVertical = true
+  }
+
+  @objc
+  func onPullRefresh() {
+    presenter?.onRefreshData()
   }
 }
 
@@ -88,6 +101,10 @@ extension PhotoFeedViewController: PhotoFeedViewProtocol {
     switch output {
     case .reload:
       collectionView.reloadData()
+    case .startRefreshing:
+      collectionView.refreshControl?.beginRefreshing()
+    case .endRefreshing:
+      collectionView.refreshControl?.endRefreshing()
     }
   }
 }

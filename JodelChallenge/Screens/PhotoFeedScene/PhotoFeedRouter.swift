@@ -20,6 +20,9 @@ final class PhotoFeedRouter: PhotoFeedRouterProtocol {
     switch route {
     case .alert(let message):
       present(message: message)
+    case .pinchToZoomImageView(let url):
+      let viewController = PinchToZoomImageViewBuilder.make()
+      view?.present(viewController, animated: true)
     }
   }
 }
