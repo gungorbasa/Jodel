@@ -12,23 +12,35 @@ import UIKit
 final class PhotoFeedViewController: UIViewController {
 
   var presenter: PhotoFeedPresenterProtocol?
-  private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+  private let layout = UICollectionViewFlowLayout()
+  private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+    presenter?.onViewDidLoad()
   }
 }
 
 private extension PhotoFeedViewController {
   func setup() {
-    view.backgroundColor = .white
+    view.backgroundColor = .groupTableViewBackground
     setupCollectionView()
   }
 
   func setupCollectionView() {
     view.addSubview(collectionView)
-    collectionView.backgroundColor = .white
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    collectionView.backgroundColor = .groupTableViewBackground
+
+    layout.scrollDirection = .vertical
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 0
+    collectionView.isPagingEnabled = true
+
+    collectionView.register(cell: PhotoFeedCell.self)
+
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     collectionView.snp.makeConstraints {
       $0.edges.equalTo(view.layoutMarginsGuide)
@@ -36,9 +48,40 @@ private extension PhotoFeedViewController {
   }
 }
 
+extension PhotoFeedViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    presenter?.numberOfItems() ?? 0
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(PhotoFeedCell.self, for: indexPath)
+    if let viewModel = presenter?.viewModelForIndex(index: indexPath.row) {
+      cell.configure(with: viewModel)
+    }
+    return cell
+  }
+}
+
+extension PhotoFeedViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
+    let cvRect = collectionView.frame
+    return CGSize(
+      width: cvRect.width,
+      height: cvRect.height
+    )
+  }
+}
+
 extension PhotoFeedViewController: PhotoFeedViewProtocol {
 
   func handleOutput(_ output: PhotoFeedPresenterOutput) {
-
+    switch output {
+    case .reload:
+      collectionView.reloadData()
+    }
   }
 }

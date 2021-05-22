@@ -21,8 +21,8 @@ final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
   func fetchImageURLS() {
     service.fetch { [weak self] result in
       switch result {
-      case .success(let urls):
-        self?.delegate?.handleOutput(.urls(urls))
+      case .success(let photos):
+        self?.delegate?.handleOutput(.photos(photos))
       case .failure(let error):
         self?.delegate?.handleOutput(.error(error))
       }

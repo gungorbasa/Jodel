@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotoFeedServing {
-  func fetch(completion: @escaping (Result<[URL], Error>) -> Void)
+  func fetch(completion: @escaping (Result<[Photo], Error>) -> Void)
 }
 
 final class PhotoFeedService: PhotoFeedServing {
@@ -19,13 +19,13 @@ final class PhotoFeedService: PhotoFeedServing {
     self.flickrApi = api
   }
 
-  func fetch(completion: @escaping (Result<[URL], Error>) -> Void) {
+  func fetch(completion: @escaping (Result<[Photo], Error>) -> Void) {
     flickrApi.fetchInterestingnessList { result in
       switch result {
       case .success(let photos):
-        print(photos)
+        completion(.success(photos))
       case .failure(let error):
-        print(error)
+        completion(.failure(error))
       }
     }
   }

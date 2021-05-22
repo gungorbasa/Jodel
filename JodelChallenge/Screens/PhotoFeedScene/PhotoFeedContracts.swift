@@ -18,7 +18,7 @@ protocol PhotoFeedInteractorProtocol: AnyObject {
 
 enum PhotoFeedInteractorOutput {
   case error(Error)
-  case urls([URL])
+  case photos([Photo])
 }
 
 protocol PhotoFeedInteractorDelegate: AnyObject {
@@ -28,11 +28,13 @@ protocol PhotoFeedInteractorDelegate: AnyObject {
 
 // MARK: - Presenter
 protocol PhotoFeedPresenterProtocol: AnyObject {
-
+  func onViewDidLoad()
+  func numberOfItems() -> Int
+  func viewModelForIndex(index: Int) -> PhotoFeedCellViewModel?
 }
 
 enum PhotoFeedPresenterOutput: Equatable {
-
+  case reload
 }
 
 // MARK: - View

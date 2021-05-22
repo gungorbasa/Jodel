@@ -9,6 +9,6 @@
 import Foundation
 
 struct PhotoFeedCellViewModel {
-  let url: URL
+  let url: URL?
   let title: String
 }
