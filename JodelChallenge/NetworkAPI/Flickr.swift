@@ -19,14 +19,29 @@ protocol FlickrAPI {
 
 final class Flickr: FlickrAPI {
   static let shared = Flickr()
+  private var page: Int = 1
 
+  // Paging structure might lead to show third page before second page
+  // But for the current case, it doesn't really matter
   func fetchInterestingnessList(completion: @escaping (Result<[Photo], Error>) -> Void) {
-    let flickrInteresting = FKFlickrInterestingnessGetList()
-    flickrInteresting.per_page = "10"
-    // TODO: Might wanna implement pagination in the future
-    flickrInteresting.page = "1"
+    page = 1
+    fetch(page: page, completion: completion)
+  }
 
-    FlickrKit.shared().call(flickrInteresting) { responseDictionary, error in
+  func fetchInterestingnessListMore(completion: @escaping (Result<[Photo], Error>) -> Void) {
+    page += 1
+    fetch(page: page, completion: completion)
+  }
+
+  private func fetch(
+    page: Int,
+    completion: @escaping (Result<[Photo], Error>) -> Void
+  ) {
+    let request = FKFlickrInterestingnessGetList()
+    request.per_page = "10"
+    request.page = "\(page)"
+
+    FlickrKit.shared().call(request) { responseDictionary, error in
       if let error = error {
         completion(.failure(error))
       } else if let photos = FlickrKit.shared().photoArray(fromResponse: responseDictionary ?? [:]) {
