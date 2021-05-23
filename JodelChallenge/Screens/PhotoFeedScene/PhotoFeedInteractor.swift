@@ -11,6 +11,7 @@ import Foundation
 final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
 
   weak var delegate: PhotoFeedInteractorDelegate?
+  private var isFetching: ThreadSafeBox<Bool> = .init(false)
 
   private let service: PhotoFeedServing
 
@@ -19,7 +20,9 @@ final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
   }
 
   func fetchImageURLS() {
+    isFetching.value = true
     service.fetch { [weak self] result in
+      self?.isFetching.value = false
       switch result {
       case .success(let photos):
         self?.delegate?.handleOutput(.photos(photos))
@@ -30,7 +33,10 @@ final class PhotoFeedInteractor: PhotoFeedInteractorProtocol {
   }
 
   func fetchMoreImageURLS() {
+    guard isFetching.value == false else { return }
+    isFetching.value = true
     service.fetchMore { [weak self] result in
+      self?.isFetching.value = false
       switch result {
       case .success(let photos):
         self?.delegate?.handleOutput(.morePhotos(photos))
