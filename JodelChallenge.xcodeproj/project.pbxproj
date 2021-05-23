@@ -24,6 +24,7 @@
 		237BAC672659BEDC00AB08E2 /* PhotoFeedInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC662659BEDC00AB08E2 /* PhotoFeedInteractorMock.swift */; };
 		237BAC692659BEFE00AB08E2 /* PhotoFeedViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC682659BEFE00AB08E2 /* PhotoFeedViewMock.swift */; };
 		237BAC6B2659BF0F00AB08E2 /* PhotoFeedRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC6A2659BF0F00AB08E2 /* PhotoFeedRouterMock.swift */; };
+		237BAC6D265AA0B600AB08E2 /* ThreadSafeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237BAC6C265AA0B600AB08E2 /* ThreadSafeBox.swift */; };
 		23D4FB0926571BDC000070AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 23D4FB0826571BDC000070AE /* Nuke */; };
 		23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */; };
 		23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */; };
@@ -72,6 +73,7 @@
 		237BAC662659BEDC00AB08E2 /* PhotoFeedInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedInteractorMock.swift; sourceTree = "<group>"; };
 		237BAC682659BEFE00AB08E2 /* PhotoFeedViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedViewMock.swift; sourceTree = "<group>"; };
 		237BAC6A2659BF0F00AB08E2 /* PhotoFeedRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedRouterMock.swift; sourceTree = "<group>"; };
+		237BAC6C265AA0B600AB08E2 /* ThreadSafeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadSafeBox.swift; sourceTree = "<group>"; };
 		23D4FB0B26571D10000070AE /* PhotoFeedSevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedSevice.swift; sourceTree = "<group>"; };
 		23D4FB0F26571E2E000070AE /* PhotoFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedPresenter.swift; sourceTree = "<group>"; };
 		23D4FB1026571E2E000070AE /* PhotoFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFeedRouter.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				237BAC4226585A0700AB08E2 /* Extensions */,
+				237BAC6C265AA0B600AB08E2 /* ThreadSafeBox.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				23D4FB1626571E2E000070AE /* PhotoFeedPresenter.swift in Sources */,
 				23D4FB0C26571D10000070AE /* PhotoFeedSevice.swift in Sources */,
 				23D4FB1926571E2E000070AE /* PhotoFeedViewController.swift in Sources */,
+				237BAC6D265AA0B600AB08E2 /* ThreadSafeBox.swift in Sources */,
 				237BAC552659085400AB08E2 /* PinchToZoomImageViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +662,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 229W9R2K22;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JodelChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -680,7 +684,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 229W9R2K22;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JodelChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
