@@ -15,8 +15,6 @@ protocol PhotoFeedServing {
 
 final class PhotoFeedService: PhotoFeedServing {
   private let flickrApi: FlickrAPI
-  // This structure of paging may lead to show third page before second page
-  // But in our case its fine
   private var page: Int = 1
 
   init(api: FlickrAPI = Flickr()) {

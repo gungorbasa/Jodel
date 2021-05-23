@@ -23,7 +23,6 @@ final class Flickr: FlickrAPI {
   func fetchInterestingnessList(page: Int, completion: @escaping (Result<[Photo], Error>) -> Void) {
     let flickrInteresting = FKFlickrInterestingnessGetList()
     flickrInteresting.per_page = "10"
-    // TODO: Might wanna implement pagination in the future
     flickrInteresting.page = "\(page)"
 
     FlickrKit.shared().call(flickrInteresting) { responseDictionary, error in
